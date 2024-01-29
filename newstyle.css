@@ -1,0 +1,129 @@
+body {
+    background-color: #181818;
+    animation-name: boot;
+    animation-duration: 2s;
+}
+@keyframes boot {
+    from {transform: scale(0.95); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* dont fucking ask */
+.main {
+    padding: 10%;
+}
+
+h1, h2, h3, a, p {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    color: white;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+.link-list {
+    width: 300px;
+    height: 550px;
+    float: left;
+}
+
+.project-list {
+    width: 400px;
+    height: 550px;
+    float: left;
+}
+
+@media (max-width: 667px) {
+    .project-list {
+        float: none;
+    }
+}
+
+@media (max-width: 715px) {
+    .project-list {
+        float: left;
+    }
+}
+
+.link:link, .link:visited {
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+}
+
+.link:hover, .link:active {
+    color: grey;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.toplink:link, .toplink:visited {
+    text-decoration: none;
+    color: grey;
+    background-color: transparent;
+}
+
+
+.list-item {
+    height: 32px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.list-item img, .text-logo-left {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    float: left;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.list-item a {
+    margin-left: 16px;
+    margin-top: 8px;
+    float: left;
+}
+
+.lock-icon {
+    color: #6b6b6b;
+    position: relative;
+    display: inline-block;
+    left: 8px;
+    top: 3px;
+}
+
+.lock-icon .lock-text {
+    opacity: 0;
+    transition: opacity 0.3s;
+    visibility: hidden;
+    background-color: #6b6b6b;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    z-index: 1;
+    width: 120px;
+    bottom: 125%;
+    left: calc(50% - 5px);
+    margin-left: -60px;
+}
+
+.lock-icon .lock-text::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #6b6b6b transparent transparent transparent;
+}
+
+.lock-icon:hover .lock-text {
+    opacity: 1;
+    visibility: visible;
+}
